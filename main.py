@@ -8,11 +8,11 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
 
-TOKEN = os.getenv("TOKEN") or "YOUR_BOT_TOKEN"
+TOKEN = os.getenv("TOKEN") or "8330315706:AAHoBJVsJ5P0fx1Vq0qKSONFo_oRO60hNCI"
 REFERRAL_URL = "https://freebitco.in/?r=55455882"
 CHANNEL_URL = "https://t.me/+8WHsVgaJkJc0NDFl"
 
-# Start command
+# /start command handler
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("🎯 Start Earning BTC", url=REFERRAL_URL)],
@@ -23,7 +23,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "👋 Welcome! Click below to roll and earn free BTC 💰", reply_markup=reply_markup
     )
 
-# Main
+# Main function
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
