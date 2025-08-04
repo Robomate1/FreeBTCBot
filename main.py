@@ -3,6 +3,8 @@ from telegram.ext import (
     ApplicationBuilder, CommandHandler, ContextTypes, JobQueue, Application
 )
 from db import init_db, add_user
+import os
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 TOKEN = "8330315706:AAHoBJVsJ5P0fx1Vq0qKSONFo_oRO60hNCI"
 REFERRAL_URL = "https://freebitco.in/?r=55455882"
@@ -52,3 +54,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
